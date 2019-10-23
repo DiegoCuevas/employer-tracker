@@ -17,8 +17,8 @@ class Api::UsersController < ApiController
   end
 
   def delete
-    article = Article.find_by(id: params[:id])
-    article.destroy
+    user = User.find_by(id: params[:id])
+    user.destroy
     render :status => :no_content
   end
 
