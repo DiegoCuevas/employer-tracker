@@ -1,24 +1,27 @@
-# README
+# Pre-Requisites
+- Ruby version 2.6.4
+- Rails version 6.0.0
+- Yarn version 1.17.3
+- Node version 12.10.0
+- PostgreSQL version 11.5
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For run the proyect you need install dependencies
+- ``bundle install``
+- ``yarn install``
+- ``gem install foreman``
+- ``rails db:setup``
 
-Things you may want to cover:
+then you run the server with
+``foreman start -f Procfile.dev -p 3000``
 
-* Ruby version
+the routes for aplication are 
+- ``/login``
+- ``/``
+- ``/reports``
+- ``/registers``
 
-* System dependencies
+If you want to access as an Admin, use this account
+ - email: diego@gm.co password: 1234
+Or if you want to access as an Employee, use this:
+ - email: tavo@gm.co password: 1234
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
