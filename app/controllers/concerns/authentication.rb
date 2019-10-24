@@ -6,7 +6,7 @@ module Authentication
   end
 
   def require_login
-    authenticate_token || render_unauthorized('Access denied')
+    current_user || render_unauthorized('Access denied')
   end
 
   def current_user
@@ -18,9 +18,5 @@ module Authentication
   def render_unauthorized(message)
     errors = { errors: { message: message } }
     render json: errors, status: :unauthorized
-  end
-
-  def authenticate_token
-    User.find(session[:user_id]) if session[:user_id]
   end
 end

@@ -5,12 +5,10 @@ async function createError(response) {
   const error = new Error(errors.message);
   error.status = response.status;
   error.statusText = response.statusText;
-  console.log(error);
   return error;
 }
 
 async function createRegister(id, values) {
-  console.log(values)
   const response = await fetch(`${API_REGISTER}/${id}/registers`, {
     method: "POST",
     credentials: "include",

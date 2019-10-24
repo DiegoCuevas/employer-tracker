@@ -28,6 +28,12 @@ class Api::RegistersController < ApiController
     render :status => :no_content
   end
 
+  def reports
+    registers = Register.joins(:user).where(users: { role: "Employe" })
+    policy_scope(registers)
+    render json: policy_scope(registers).map(&:report).flatten
+  end
+
   private 
   
   def register_params

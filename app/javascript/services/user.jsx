@@ -15,9 +15,8 @@ async function login(user) {
       "Content-Type": "application/json"
     }
   });
-  if (!response.ok) throw createError(response);
-  const { name, id, email, rol } = await response.json();
-  return { name, email, id, rol };
+  if (!response.ok) throw await createError(response);
+  return;
 }
 
 async function logout() {

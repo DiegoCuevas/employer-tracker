@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { logout } from "../services/user";
+import { navigate } from "@reach/router"
 
 function Navbar() {
   return (
     <>
-      <button onClick={logout}>Logout</button>
+      <button
+        onClick={() => {
+          logout();
+          navigate("/login")
+        }}
+      >
+        Logout
+      </button>
       <hr />
     </>
   );

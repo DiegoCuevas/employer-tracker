@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users do 
       resources :registers
     end
-    resources :reports
+    get :reports, to: "registers#reports"
   end
 
   get "/login", to: "login#index"

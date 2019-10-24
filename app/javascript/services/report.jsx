@@ -1,5 +1,3 @@
-import { defer } from "q";
-
 async function createError(response) {
   const { errors } = await response.json();
   const error = new Error(errors.message);

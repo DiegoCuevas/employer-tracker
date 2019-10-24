@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { login } from "../services/user"
-import { navigate } from "@reach/router"
+import { login } from "../services/user";
 
 function Login() {
+  const [error, setError] = useState(null);
   return (
     <div>
-      <h1>Logeate pe!</h1>
+      <h1>login</h1>
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={values => {
@@ -20,9 +20,14 @@ function Login() {
           }
           return errors;
         }}
-        onSubmit={(values)=>{
-          login(values);
-          window.location.href = "/registers";
+        onSubmit={async (values, actions) => {
+          try {
+            await login(values);
+            window.location.reload();
+          } catch (errors) {
+            setError(errors.message);
+            actions.setSubmitting(false);
+          }
         }}
       >
         {({ isSubmitting }) => (
@@ -31,6 +36,7 @@ function Login() {
             <ErrorMessage name="email" component="div" />
             <Field type="password" name="password" />
             <ErrorMessage name="password" component="div" />
+            <div>{error}</div>
             <button type="submit" disabled={isSubmitting}>
               Submit
             </button>

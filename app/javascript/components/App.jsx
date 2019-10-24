@@ -1,9 +1,10 @@
 import React from "react";
 import Home from "./Home";
 import Register from "../components/Register";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import Navbar from "./Navbar";
-import ReportView from "./ReportView"
+import ReportView from "./ReportView";
+import Login from "./Login"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Home path="/" />
         <Register path="/registers" />
         <ReportView path="/reports" />
+        <Login path="/login" />
       </Router>
     </>
   );
