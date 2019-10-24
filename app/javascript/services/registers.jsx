@@ -9,13 +9,15 @@ async function createError(response) {
   return error;
 }
 
-async function createRegister(id, values) {
+async function createRegister(id, values, token) {
+  console.log(token)
   const response = await fetch(`${API_REGISTER}/${id}/registers`, {
     method: "POST",
     credentials: "include",
     body: JSON.stringify(values),
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      Authorization: `token ${token}`
     }
   });
   if (!response.ok) throw createError(response);

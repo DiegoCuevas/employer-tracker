@@ -1,9 +1,10 @@
 class ApiController < ActionController::API
+  include ActionController::RequestForgeryProtection
   include ActionController::HttpAuthentication::Token::ControllerMethods
-  before_action :require_login
-
   include Pundit
-  protect_from_forgery
+
+  before_action :require_login 
+  protect_from_forgery with: :null_session
 
   def require_login
     authenticate_token || render_unauthorized('Access denied')

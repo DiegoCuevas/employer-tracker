@@ -4,7 +4,7 @@ import { createRegister } from "../services/registers";
 
 function Register() {
   const handleSubmit = async values => {
-    await createRegister(values);
+    await createRegister(values.userId, values);
   };
 
   return (
@@ -14,7 +14,7 @@ function Register() {
           type: "users",
           attributes: {
             entry: "",
-            "user-id": "",
+            userId: "",
             exit: ""
           }
         }}
@@ -34,14 +34,14 @@ function Register() {
               </label>
             </div>
             <div>
-              <label htmlFor="attributes['user-id']">
+              <label htmlFor="attributes.userId">
                 userId:{" "}
                 <input
                   type="text"
-                  id="attributes['user-id']"
-                  name="attributes['last-name']"
+                  id="attributes.userId"
+                  name="attributes.userId"
                   onChange={handleChange}
-                  value={values.attributes["last-name"]}
+                  value={values.attributes.userId}
                 />
               </label>
             </div>

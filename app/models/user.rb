@@ -1,13 +1,19 @@
 class User < ApplicationRecord
   has_many :register
   has_secure_password
+  has_secure_token
+
+
+  def invalidate_token
+    update(token: nil)
+  end
 
   def admin?
-    role == "Admin"
+    user.role == "Admin"
   end
 
   def employe?
-    role == "Employe"
+    user.role == "Employe"
   end
 
 

@@ -1,11 +1,4 @@
-class Register < ApplicationPolicy
-   attr_reader :user, :register
-
-  def initialize(user, register)
-    @user = user
-    @register = register
-  end
-
+class RegisterPolicy < ApplicationPolicy
   def index?
     user.admin? || user.employe?
   end
