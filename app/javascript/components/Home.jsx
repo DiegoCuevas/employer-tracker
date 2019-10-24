@@ -5,8 +5,10 @@ function Home(props) {
   return (
     <div>
       <h1>Home Page</h1>
-      <Link to="/registers">Registers</Link>
-      <Link to="/reports">Reports</Link>
+      <ul>
+        <li><Link to="/registers">Registers</Link></li>
+        <li><Link to="/reports">Reports</Link></li>
+      </ul>
     </div>
   );
 }

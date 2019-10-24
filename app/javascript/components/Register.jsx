@@ -22,18 +22,6 @@ function Register() {
         render={({ values, handleSubmit, handleChange }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="attributes.entry">
-                entry:{" "}
-                <input
-                  type="text"
-                  id="attributes.entry"
-                  name="attributes.entry"
-                  onChange={handleChange}
-                  value={values.attributes.entry}
-                />
-              </label>
-            </div>
-            <div>
               <label htmlFor="attributes.userId">
                 userId:{" "}
                 <input
@@ -42,6 +30,20 @@ function Register() {
                   name="attributes.userId"
                   onChange={handleChange}
                   value={values.attributes.userId}
+                  placeholder="User Id"
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="attributes.entry">
+                entry:{" "}
+                <input
+                  type="text"
+                  id="attributes.entry"
+                  name="attributes.entry"
+                  onChange={handleChange}
+                  value={values.attributes.entry}
+                  placeholder="time of entry"
                 />
               </label>
             </div>
@@ -54,10 +56,10 @@ function Register() {
                   name="attributes.exit"
                   onChange={handleChange}
                   value={values.attributes.exit}
+                  placeholder="time of exit"
                 />
               </label>
             </div>
-            
             <button type="submit">submit</button>
           </form>
         )}
