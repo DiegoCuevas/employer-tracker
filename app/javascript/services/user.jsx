@@ -10,20 +10,23 @@ async function login(user) {
   const response = await fetch("/login", {
     method: "POST",
     credentials: "include",
-    body: user ? JSON.stringify(user) : "{}",
+    body: JSON.stringify(user),
     headers: {
       "Content-Type": "application/json"
     }
   });
   if (!response.ok) throw createError(response);
-  const data = await response.json();
-  return data;
+  const { name, id, email, rol } = await response.json();
+  return { name, email, id, rol };
 }
 
 async function logout() {
   const response = await fetch("/logout", {
     method: "DELETE",
-    credentials: "include"
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json"
+    }
   });
   if (!response.ok) throw createError(response);
 }

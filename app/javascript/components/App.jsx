@@ -1,16 +1,20 @@
 import React from "react";
 import Home from "./Home";
-import Login from "./Login";
-import Register from "../components/Register"
+import Register from "../components/Register";
 import { Router, Link } from "@reach/router";
+import Navbar from "./Navbar";
+import ReportView from "./ReportView"
 
 function App() {
   return (
-    <Router>
-      <Home path="/home"/>
-      <Login path="/"/>
-      <Register path="/registers"/>
-    </Router>
+    <>
+      <Navbar />
+      <Router>
+        <Home path="/" />
+        <Register path="/registers" />
+        <ReportView path="/reports" />
+      </Router>
+    </>
   );
 }
 

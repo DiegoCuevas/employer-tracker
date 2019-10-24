@@ -6,4 +6,9 @@ class SessionsController < ApiController
     session[:user_id] = user.id
   end
 
+  def destroy
+    session[:user_id] = nil
+    @current_user = nil
+    head :no_content
+  end
 end

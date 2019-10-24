@@ -4,7 +4,7 @@ import { createRegister } from "../services/registers";
 
 function Register() {
   const handleSubmit = async values => {
-    await createRegister(values.userId, values);
+    await createRegister(values.attributes.userId, values.attributes);
   };
 
   return (

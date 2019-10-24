@@ -22,7 +22,7 @@ function Login() {
         }}
         onSubmit={(values)=>{
           login(values);
-          navigate("/registers");
+          window.location.href = "/registers";
         }}
       >
         {({ isSubmitting }) => (

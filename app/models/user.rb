@@ -1,19 +1,30 @@
 class User < ApplicationRecord
-  has_many :register
+  has_many :registers
   has_secure_password
   has_secure_token
 
+  def report
+    registers.map do |register|
+      {
+        name: name, 
+        entry_day: register.entry.strftime("%d %B %Y"), 
+        entry: register.entry.to_s(:time), 
+        exit_day: register.exit.strftime("%d %B %Y"), 
+        exit: register.exit.to_s(:time) 
+      }
+    end
+  end 
 
   def invalidate_token
     update(token: nil)
   end
 
   def admin?
-    user.role == "Admin"
+    role == "Admin"
   end
 
   def employe?
-    user.role == "Employe"
+    role == "Employe"
   end
 
 

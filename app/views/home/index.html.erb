@@ -1,2 +1,6 @@
 <div id="root"></div>
+<script id="user" type="application/json">
+  <%= raw json_escape(@current_user.to_json(only: [:id, :email, :name])) %>
+</script>
+<%= stylesheet_pack_tag "application" %>
 <%= javascript_pack_tag 'application' %>
