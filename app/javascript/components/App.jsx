@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./Home";
+import "tailwindcss/tailwind.css";
 import Register from "../components/Register";
 import { Router } from "@reach/router";
 import Navbar from "./Navbar";
