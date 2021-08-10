@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { login } from "../services/user";
-
+import loginImage from "../../assets/images/login.svg";
 function Login() {
   const [error, setError] = useState(null);
   return (
