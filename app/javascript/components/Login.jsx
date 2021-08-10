@@ -13,28 +13,28 @@ function Login() {
         <div className="w-1/2 h-full">
           <Formik
             initialValues={{ email: "", password: "" }}
-        validate={values => {
-          let errors = {};
-          if (!values.email) {
-            errors.email = "Required";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Invalid email address";
-          }
-          return errors;
-        }}
-        onSubmit={async (values, actions) => {
-          try {
-            await login(values);
-            window.location.reload();
-          } catch (errors) {
-            setError(errors.message);
-            actions.setSubmitting(false);
-          }
-        }}
-      >
-        {({ isSubmitting }) => (
+            validate={(values) => {
+              let errors = {};
+              if (!values.email) {
+                errors.email = "Required";
+              } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+              ) {
+                errors.email = "Invalid email address";
+              }
+              return errors;
+            }}
+            onSubmit={async (values, actions) => {
+              try {
+                await login(values);
+                window.location.reload();
+              } catch (errors) {
+                setError(errors.message);
+                actions.setSubmitting(false);
+              }
+            }}
+          >
+            {({ isSubmitting }) => (
           <Form>
             <Field type="email" name="email" />
             <ErrorMessage name="email" component="div" />
