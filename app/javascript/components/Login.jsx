@@ -35,9 +35,15 @@ function Login() {
             }}
           >
             {({ isSubmitting }) => (
-          <Form>
-            <Field type="email" name="email" />
-            <ErrorMessage name="email" component="div" />
+              <Form className="w-full h-full  justify-center items-center ">
+                <div className="h-1/6 flex items-center justify-center">
+                  <h1 className="text-center text-xl">Sign In</h1>
+                </div>
+                <div className="w-full h-5/6 p-5 flex flex-col  justify-center">
+                  <div className="w-full h-1/6 flex flex-col justify-center my-4">
+                    <label htmlFor="email">Email</label>
+                    <Field className="h-1/2" type="email" name="email" />
+                    <ErrorMessage name="email" component="div" />
             <Field type="password" name="password" />
             <ErrorMessage name="password" component="div" />
             <div>{error}</div>
