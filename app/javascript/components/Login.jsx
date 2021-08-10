@@ -5,10 +5,14 @@ import loginImage from "../../assets/images/login.svg";
 function Login() {
   const [error, setError] = useState(null);
   return (
-    <div>
-      <h1>login</h1>
-      <Formik
-        initialValues={{ email: "", password: "" }}
+    <div className="w-full h-screen bg-gradient-to-b from-green-300 flex flex-col justify-center items-center border border-black">
+      <div className="flex flex-row w-2/3 h-3/4 justify-center items-center rounded-xl shadow-2xl bg-green-300 border border-green-400">
+        <div className="w-1/2 h-full flex justify-center items-center">
+          <img src={loginImage} alt="" className="w-full h-1/2" />
+        </div>
+        <div className="w-1/2 h-full">
+          <Formik
+            initialValues={{ email: "", password: "" }}
         validate={values => {
           let errors = {};
           if (!values.email) {
