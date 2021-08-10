@@ -50,12 +50,16 @@ function Login() {
                     <Field className="h-1/2" type="password" name="password" />
                     <ErrorMessage name="password" component="div" />
                     <div>{error}</div>
-            <button type="submit" disabled={isSubmitting}>
-              Submit
-            </button>
-          </Form>
-        )}
-      </Formik>
+                  </div>
+                  <button className="" type="submit" disabled={isSubmitting}>
+                    Submit
+                  </button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        </div>
+      </div>
     </div>
   );
 }
