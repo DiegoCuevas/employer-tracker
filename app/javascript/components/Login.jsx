@@ -42,7 +42,11 @@ function Login() {
                 <div className="w-full h-5/6 p-5 flex flex-col  justify-center">
                   <div className="w-full h-1/6 flex flex-col justify-center my-4">
                     <label htmlFor="email">Email</label>
-                    <Field className="h-1/2" type="email" name="email" />
+                    <Field
+                      className="h-1/2 bg-green-100 rounded-lg shadow-2xl focus:bg-white"
+                      type="email"
+                      name="email"
+                    />
                     <ErrorMessage name="email" component="div" />
                   </div>
                   <div className="w-full h-1/6 flex flex-col justify-center my-4">
