@@ -51,7 +51,11 @@ function Login() {
                   </div>
                   <div className="w-full h-1/6 flex flex-col justify-center my-4">
                     <label htmlFor="password">Contraseña</label>
-                    <Field className="h-1/2" type="password" name="password" />
+                    <Field
+                      className="h-1/2 bg-green-100 rounded-lg shadow-2xl focus:bg-white"
+                      type="password"
+                      name="password"
+                    />
                     <ErrorMessage name="password" component="div" />
                     <div>{error}</div>
                   </div>
