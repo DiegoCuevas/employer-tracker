@@ -59,7 +59,7 @@ function Login() {
                     <ErrorMessage name="password" component="div" />
                     <div>{error}</div>
                   </div>
-                  <button className="mx-28 my-5 h-10 bg-green-400 shadow-xl border-green-600 w-1/2 rounded-xl" type="submit" disabled={isSubmitting}>
+                  <button className="mx-28 my-5 h-10 bg-green-400 shadow-xl border-green-700 w-1/2 rounded-xl" type="submit" disabled={isSubmitting}>
                     Submit
                   </button>
                 </div>
